@@ -16,7 +16,7 @@ def get_image():
     if "copyright" in content.keys():
         copyright_ = content["copyright"]
     else:
-        copyrignt_ = "[No author]"
+        copyright_ = "[No author]"
     if "explanation" in content.keys():
         explanation = content["explanation"]
     else:
