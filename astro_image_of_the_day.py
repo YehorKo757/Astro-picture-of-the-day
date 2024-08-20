@@ -9,9 +9,18 @@ def get_image():
            f"api_key={api_key}")
     request = requests.get(url)
     content = request.json()
-    title = content["title"]
-    copyright_ = content["copyright"]
-    explanation = content["explanation"]
+    if "title" in content.keys():
+        title = content["title"]
+    else:
+        title = "[No title]"
+    if "copyright" in content.keys():
+        copyright_ = content["copyright"]
+    else:
+        copyrignt_ = "[No author]"
+    if "explanation" in content.keys():
+        explanation = content["explanation"]
+    else:
+        explanation = "There is no description provided, sorry."
     img_url = content["url"]
     ext = img_url.split(".")[-1]
     image_of_the_day = requests.get(img_url).content
