@@ -5,7 +5,7 @@ st.set_page_config(layout="wide")
 
 title, copyright_, explanation,  ext = get_image()
 
-if copyright_ is not None:
+if copyright_ is not None or copyright_ is not "[No author]":
     st.title(f"{title} by {copyright_}")
 else:
     st.title(f"{title}")
